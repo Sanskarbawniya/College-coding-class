@@ -1,0 +1,71 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int a[10],i;
+    int val,loc,flag=0, n=5;
+    
+    cout<<"Enter the array elements";
+    for(i=0;i<n;i++){
+        cin>>a[i];
+    }
+    cout<<"array elements:";
+    for(i=0;i<5;i++)
+    {
+        cout<<a[i]<<endl;
+    }
+    cout<<"enter a number to search :";
+    cin>>val;
+    i=0;
+    while(i<5)
+    {
+        if(a[i]==val)
+        {
+            cout<<"elements found at index"<<i<<endl;
+            i++;
+            flag=1;
+        }
+        else{
+            i++;
+        }
+    }
+    if(flag==0){
+    cout<<"Search is unsuccessful";
+    }
+    
+    //Insertion in Array
+    
+    cout<<"enter the value to be inserted : ";
+    cin>>val;
+    
+    cout<<"enter the location which the value to be inserted : ";
+    cin>>loc;
+    for(i=n-1;i>=loc-1;i--)
+    {
+        a[i+1]=a[i];
+    }
+    a[loc-1]=val;
+    n=n+1;
+    for(i=0;i<n;i++)
+    {
+        cout<<a[i]<<endl;
+    }
+    
+    //Spliting of Array
+    
+    int mid=n/2;
+    
+    cout<<"first half :";
+    for(i=0;i<mid;i++)
+    {
+        cout<<a[i]<<"";
+    }
+    cout<<"\nsecond half :";
+    for(i=mid;i<n;i++){
+        cout<<a[i]<<"";
+    }
+    return 0;
+}
+
+
+
