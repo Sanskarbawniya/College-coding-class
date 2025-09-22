@@ -22,17 +22,24 @@ using namespace std;
             cout<<"Enter the value to be storade in node"<<i+1<<":";
             cin>>last->data;
             last->link=NULL;
-            last->link=temp;
-            temp=temp->link;
+           temp->link=last;
             temp=last;
-        }
+        } 
+        cout<<"The linked list is :";
+        
       {temp=first;
         while(temp!=NULL)
-        {cout<<temp->data<<" ";
+        {
+            cout<<temp->data<<" ";
         temp=temp->link;
         }
     
       }
+      bool flag=0;
+      int key;
+      cout<<"Enter the value to be searched :";
+      cin>>key;
+      if(n==key)
     
         return 0;
     }
