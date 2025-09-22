@@ -1,0 +1,41 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+    struct node{
+        int data;
+        node*link;
+        
+    };
+    int main(){
+        int val,n,i;
+        node*first,*temp,*last;
+        cout<<"Enter the size of list:";
+        cin>>n;
+        first=new node;
+        cout<<"Enter the value to be storade in node1:";
+        cin>>first->data;
+        first->link=NULL;
+        temp=first;
+        for(i=1;i<n;i++)
+        {
+            last=new node;
+            cout<<"Enter the value to be storade in node"<<i+1<<":";
+            cin>>last->data;
+            last->link=NULL;
+            last->link=temp;
+            temp=temp->link;
+            temp=last;
+        }
+      {temp=first;
+        while(temp!=NULL)
+        {cout<<temp->data<<" ";
+        temp=temp->link;
+        }
+    
+      }
+    
+        return 0;
+    }
+        
+    
+   
