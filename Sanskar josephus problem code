@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+struct node{
+    int data;
+    node*link;
+}
+int main(){
+    int i, n, val;
+    node*first,*temp,*last;
+    cout<<"Enter the number of soldiers :";
+    cin>>n;
+    while(n!=1)
+    {
+        temp=back->link;
+        c=count;
+        while(c!=0)
+        {
+            back=temp;
+            temp=temp->link;
+            c--;
+        }
+        back->link=temp->link;
+        temp->link=NULL;
+        cout<<temp->data;
+        delete temp;
+        n--;
+        temp=back->link;
+        c=count;
+    }
+}
