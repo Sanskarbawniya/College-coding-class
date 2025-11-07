@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+
+struct node{
+    int data;
+    node*link;
+};
+
+int main(){
+    int val,n,i;
+    node*first,*temp,*last;
+    cout<<"Enter the size of the list : ";
+    cin>>n;
+    first=new node;
+    cout<<"Enter the value to be stored in the node 1 : ";
+    cin>>first->data;
+    first->link=NULL;
+    temp=first;
+    for(i=1;i<n;i++){
+        last=new node;
+        cout<<"Enter the value to be stored in the node"<<i+1<<":";
+        cin>>last->data;
+        last->link=NULL;
+        temp->link=last;
+        temp=last;
+    }
+    cout<<"The linkedlist is : ";
+    temp=first;
+    while(temp!=NULL){
+        cout<<temp->data<<"";
+        temp=temp->link;
+    }
+    cout<<"Enter the value to be searched : ";
+    cin>>val;
+    temp=first; 
+    bool found = false;
+    while(temp!=NULL){
+        if(temp->data==val){
+            found = true;
+            break;
+        }
+        temp=temp->link;
+    }
+    if(found){
+        cout<<"Value "<<val<<" found in the list."<<endl;
+    } else {
+        cout<<"Value "<<val<<" not found in the list."<<endl;
+    }
+
+}
