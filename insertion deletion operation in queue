@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+#define MAX 10
+int queue[MAX];
+int front=-1,rear=-1;
+
+void enqueue(int val){
+    if (rear==MAX-1) {
+        cout<<"Queue is full"<<endl;
+    }else{
+        if(front==-1)front=0;
+        rear++;
+        queue[rear] = val;
+        cout<<val<<"inserted into queue"<<endl;
+    }
+}
+
+void dequeue() {
+    if (front==-1) {
+        cout<<"Queue is empty"<<endl;
+        front=rear=-1;
+    }else{
+        cout<<"Deleted element:"<<queue[front]<<endl;
+        front++;
+    }
+}
+
+void peek(){
+    if (front==-1){
+        cout<<"Queue is empty"<<endl;
+    } else {
+        cout<<"Front element is: "<<queue[front]<<endl;
+        cout<<"Rear element is: "<<queue[rear]<<endl;
+    }
+}
+
+int main() {
+    enqueue(10);
+    enqueue(20);
+    enqueue(30);
+    peek();
+    dequeue();
+    peek();
+    return 0;
+}
